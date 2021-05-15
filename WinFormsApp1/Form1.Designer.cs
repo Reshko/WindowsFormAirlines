@@ -37,6 +37,7 @@ namespace WinFormsApp1
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
+            this.linkLabelPassword = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,12 +105,24 @@ namespace WinFormsApp1
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // linkLabelPassword
+            // 
+            this.linkLabelPassword.AutoSize = true;
+            this.linkLabelPassword.Location = new System.Drawing.Point(597, 311);
+            this.linkLabelPassword.Name = "linkLabelPassword";
+            this.linkLabelPassword.Size = new System.Drawing.Size(45, 20);
+            this.linkLabelPassword.TabIndex = 7;
+            this.linkLabelPassword.TabStop = true;
+            this.linkLabelPassword.Text = "Show";
+            this.linkLabelPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPassword_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLabelPassword);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.PasswordTextBox);
@@ -119,6 +132,7 @@ namespace WinFormsApp1
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,6 +148,7 @@ namespace WinFormsApp1
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button ExitBtn;
+        private System.Windows.Forms.LinkLabel linkLabelPassword;
     }
 }
 

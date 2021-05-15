@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace WinFormsApp1
 {
@@ -15,22 +17,55 @@ namespace WinFormsApp1
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            PasswordTextBox.PasswordChar = '*';
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
+            MessageBox.Show("Test");
         }
+
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            new LoginForm().Show();
-            this.Hide();
+      
+            String userName = LoginTextBox.Text.Trim();
+            String userPassword = PasswordTextBox.Text.Trim();
+
+
+
+            if (userName != "" || userPassword != "")
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Заполни поле");
+            }
+            //new LoginForm().Show();
+            //this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabelPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (linkLabelPassword.Text == "Show")
+            {
+                PasswordTextBox.PasswordChar = '\0';
+                linkLabelPassword.Text = "Hide";
+
+            }
+            else
+            {
+                PasswordTextBox.PasswordChar = '*';
+                linkLabelPassword.Text = "Show";
+
+            }
         }
     }
 }
