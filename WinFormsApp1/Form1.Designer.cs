@@ -61,16 +61,6 @@ namespace WinFormsApp1
             this.LoginLabel.TabIndex = 1;
             this.LoginLabel.Text = "Login:";
             // 
-            // PasswordLabel
-            // 
-            this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(73, 315);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(73, 20);
-            this.PasswordLabel.TabIndex = 2;
-            this.PasswordLabel.Text = "Password:";
-            this.PasswordLabel.Click += new System.EventHandler(this.label2_Click);
-            // 
             // LoginTextBox
             // 
             this.LoginTextBox.Location = new System.Drawing.Point(209, 249);
