@@ -7,16 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        private SqlConnection sqlConnection = null;
+
         public Form1()
         {
             InitializeComponent();
             PasswordTextBox.PasswordChar = '*';
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["GosExString"].ConnectionString);
+
+            sqlConnection.Open();
+
+            if (sqlConnection.State == ConnectionState.Open)
+            {
+                MessageBox.Show("Подключение установлено");
+            }
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -46,11 +63,6 @@ namespace WinFormsApp1
             //this.Hide();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabelPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (linkLabelPassword.Text == "Show")
@@ -65,6 +77,11 @@ namespace WinFormsApp1
                 linkLabelPassword.Text = "Show";
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

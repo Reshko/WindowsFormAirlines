@@ -38,6 +38,7 @@ namespace WinFormsApp1
             this.LoginBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.linkLabelPassword = new System.Windows.Forms.LinkLabel();
+            this.label1Password = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,13 @@ namespace WinFormsApp1
             this.LoginLabel.Size = new System.Drawing.Size(49, 20);
             this.LoginLabel.TabIndex = 1;
             this.LoginLabel.Text = "Login:";
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.Location = new System.Drawing.Point(0, 0);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(100, 23);
+            this.PasswordLabel.TabIndex = 8;
             // 
             // LoginTextBox
             // 
@@ -106,12 +114,23 @@ namespace WinFormsApp1
             this.linkLabelPassword.Text = "Show";
             this.linkLabelPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPassword_LinkClicked);
             // 
+            // label1Password
+            // 
+            this.label1Password.AutoSize = true;
+            this.label1Password.Location = new System.Drawing.Point(97, 315);
+            this.label1Password.Name = "label1Password";
+            this.label1Password.Size = new System.Drawing.Size(73, 20);
+            this.label1Password.TabIndex = 9;
+            this.label1Password.Text = "Password:";
+            this.label1Password.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1Password);
             this.Controls.Add(this.linkLabelPassword);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.LoginBtn);
@@ -139,6 +158,7 @@ namespace WinFormsApp1
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.LinkLabel linkLabelPassword;
+        private System.Windows.Forms.Label label1Password;
     }
 }
 
