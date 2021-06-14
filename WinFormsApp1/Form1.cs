@@ -30,10 +30,6 @@ namespace WinFormsApp1
 
             sqlConnection.Open();
 
-            if (sqlConnection.State == ConnectionState.Open)
-            {
-                MessageBox.Show("Подключение установлено");
-            }
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -49,16 +45,61 @@ namespace WinFormsApp1
             String userName = LoginTextBox.Text.Trim();
             String userPassword = PasswordTextBox.Text.Trim();
 
-
-
-            if (userName != "" || userPassword != "")
+            // Проверка на пустоту логина
+            if (userName != "")
             {
-                
+                SqlCommand sqlCommand = new SqlCommand($"SELECT RoleID FROM Users WHERE Email=@Email",sqlConnection);
+                sqlCommand.Parameters.AddWithValue("Email", userName);
+                object reade_obj = sqlCommand.ExecuteScalar();
+
+                // Проверка что нам возвращает SELECT
+                if (reade_obj != null)
+                {
+                    string reader = sqlCommand.ExecuteScalar().ToString(); // ID РОЛЬ СОТРУДНИКА
+
+                    // Вытаскиваем пароль по Email
+                    SqlCommand sqlPassword = new SqlCommand($"SELECT Password FROM Users WHERE Email=@Email_Users", sqlConnection);
+                    sqlPassword.Parameters.AddWithValue("Email_Users", userName);
+                    string password_reader = sqlPassword.ExecuteScalar().ToString(); // Password Сотрудника
+                    
+                    // Проверка на соотвествие пароля в бд и форме
+                    if (password_reader.Equals(userPassword))
+                    {
+                        MessageBox.Show("Совпадают");
+                        if (reader.Equals("1"))
+                        {
+                            new LoginForm().Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            new UserForm().Show();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не совпадают");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Пустой объект");
+                }
             }
             else
             {
-                MessageBox.Show("Заполни поле");
+                MessageBox.Show("Login пустой");
             }
+
+            //if (userName != "" || userPassword != "")
+            //{
+                
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Заполни поле");
+            //}
             //new LoginForm().Show();
             //this.Hide();
         }
