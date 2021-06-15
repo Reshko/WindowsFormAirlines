@@ -29,19 +29,24 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.OfficeLabel = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ChangeRoleBtn = new System.Windows.Forms.Button();
             this.DisableRoleBtn = new System.Windows.Forms.Button();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // OfficeLabel
             // 
             this.OfficeLabel.AutoSize = true;
-            this.OfficeLabel.Location = new System.Drawing.Point(3, 68);
+            this.OfficeLabel.Location = new System.Drawing.Point(0, 25);
             this.OfficeLabel.Name = "OfficeLabel";
-            this.OfficeLabel.Size = new System.Drawing.Size(49, 20);
+            this.OfficeLabel.Size = new System.Drawing.Size(39, 15);
             this.OfficeLabel.TabIndex = 0;
             this.OfficeLabel.Text = "Office";
             // 
@@ -53,56 +58,79 @@ namespace WinFormsApp1
             "Moscow",
             "Kiev",
             "Minsk"});
-            this.comboBox1.Location = new System.Drawing.Point(80, 65);
+            this.comboBox1.Location = new System.Drawing.Point(45, 22);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.Size = new System.Drawing.Size(133, 23);
             this.comboBox1.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(80, 113);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(695, 273);
-            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // ChangeRoleBtn
             // 
-            this.ChangeRoleBtn.Location = new System.Drawing.Point(80, 409);
+            this.ChangeRoleBtn.Location = new System.Drawing.Point(70, 307);
+            this.ChangeRoleBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChangeRoleBtn.Name = "ChangeRoleBtn";
-            this.ChangeRoleBtn.Size = new System.Drawing.Size(103, 29);
+            this.ChangeRoleBtn.Size = new System.Drawing.Size(90, 22);
             this.ChangeRoleBtn.TabIndex = 3;
             this.ChangeRoleBtn.Text = "Change role";
             this.ChangeRoleBtn.UseVisualStyleBackColor = true;
             // 
             // DisableRoleBtn
             // 
-            this.DisableRoleBtn.Location = new System.Drawing.Point(219, 409);
+            this.DisableRoleBtn.Location = new System.Drawing.Point(192, 307);
+            this.DisableRoleBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DisableRoleBtn.Name = "DisableRoleBtn";
-            this.DisableRoleBtn.Size = new System.Drawing.Size(174, 29);
+            this.DisableRoleBtn.Size = new System.Drawing.Size(152, 22);
             this.DisableRoleBtn.TabIndex = 4;
             this.DisableRoleBtn.Text = "Disable/Enable Login";
             this.DisableRoleBtn.UseVisualStyleBackColor = true;
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton2});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(700, 25);
+            this.toolStrip2.TabIndex = 5;
+            this.toolStrip2.Text = "toolStrip2";
+            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(99, 22);
+            this.toolStripButton2.Text = "Считать данные";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 43);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(700, 259);
+            this.dataGridView1.TabIndex = 6;
+            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.DisableRoleBtn);
             this.Controls.Add(this.ChangeRoleBtn);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.OfficeLabel);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
             this.Text = "AMONIC Airlines Automation System";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,8 +140,12 @@ namespace WinFormsApp1
 
         private System.Windows.Forms.Label OfficeLabel;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button ChangeRoleBtn;
         private System.Windows.Forms.Button DisableRoleBtn;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
